@@ -1,0 +1,22 @@
+<div class="container-fluid searchbar-container">
+    <div class="py-3 text-left container">
+      <h4 class="searchheading">Search items</h4>
+      <section class="filter-wrapper ">
+        <div class="keyword-wrapper">
+          <ul class="filter-select list-unstyled">
+            <li class="filter-select-list mt-4" *ngFor="let article of articleList">
+              <div class="d-flex align-items-center">
+                <a class="mr-5" href="{{article.weburl}}" target="_blank">{{article.articletitle}}</a>
+                <button><i class="fa fa-download" aria-hidden="true"></i></button>
+              </div>
+              <p> {{article.published}}</p>
+              <p> {{article.summary}}</p>
+              <div style="border-bottom:1px dashed #ddd;"></div>
+              <div></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  

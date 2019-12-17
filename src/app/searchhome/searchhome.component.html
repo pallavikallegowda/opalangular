@@ -1,0 +1,5 @@
+<div class="container">
+    <form #articleForm="ngForm" (ngSubmit)="searcharticle(articleForm)">
+        <input type="text" [(ngModel)]="search" name="searchitem" class="form-control" placeholder="Enter Search Term Here" autocomplete="off" />
+      </form>
+</div>
