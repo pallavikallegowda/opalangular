@@ -5,6 +5,7 @@ import { ArticleService } from '../article/article.service';
 import { NgForm } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-searcheditems',
   templateUrl: './searcheditems.component.html',
@@ -27,6 +28,10 @@ export class SearcheditemsComponent {
       data => this.articleList = data
     )
   }
+  userdetails(): void {  
+      this._router.navigate(['user']);  
+  }  
+  
 }
  interface ArticleData {
     id:string;
