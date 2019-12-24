@@ -12,6 +12,8 @@ import { HttpModule } from '@angular/http';
 import { UserinfoComponent } from './User/userinfo/userinfo.component';
 import { SigninComponent } from './User/signin/signin.component';
 import { UserComponent } from './user/user.component';
+import { AuthGuard } from './guards/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { UserComponent } from './user/user.component';
     SearcheditemsComponent,
     UserinfoComponent,
     SigninComponent,
-    UserComponent
+    UserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { UserComponent } from './user/user.component';
     HttpClientModule,
     HttpModule  
   ],
-  providers: [],
+  providers: [AuthGuard],    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

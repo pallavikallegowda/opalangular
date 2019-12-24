@@ -5,6 +5,8 @@ import {SearcheditemsComponent} from './searcheditems/searcheditems.component';
 import { UserComponent } from './user/user.component';
 import {UserinfoComponent} from './User/userinfo/userinfo.component';
 import {SigninComponent} from './User/signin/signin.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
     path: 'login', component: UserComponent,
     children: [{ path: '', component: SigninComponent }]
 },
-{ path : '', redirectTo:'/login', pathMatch : 'full'}
+{ path: 'dashboard', component: DashboardComponent, canActivate : [AuthGuard] }  
+
 ];
 
 @NgModule({

@@ -37,7 +37,8 @@ export class UserdetailsService {
     salutation:null,
     address:null,
     emailid:null,
-    phone:null
+    phone:null,
+    password:null
     };    
   }    
 }

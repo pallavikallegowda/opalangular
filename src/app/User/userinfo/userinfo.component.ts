@@ -45,6 +45,7 @@ export class UserinfoComponent implements OnInit, OnDestroy {
       address: '',  
       emailid:'',
       phone: ['', [Validators.required]],  
+      password:'',
     });  
     
     this.sub = this.route.paramMap.subscribe(  
@@ -52,7 +53,7 @@ export class UserinfoComponent implements OnInit, OnDestroy {
         const id = params.get('id');  
         const phone = params.get('phone');  
         if (id == '0') {  
-          const user: User = { id: "0", firstname: "", lastname:"",salutation: "", address: "", emailid: "", phone: ""};  
+          const user: User = { id: "0", firstname: "", lastname:"",salutation: "", address: "", emailid: "", phone: "",password: ""};  
           this.displayUser(user);  
         }  
       }  
@@ -79,7 +80,8 @@ export class UserinfoComponent implements OnInit, OnDestroy {
       salutation: this.user.salutation,  
       address: this.user.address,  
       emailid: this.user.emailid,  
-      phone: this.user.phone  
+      phone: this.user.phone  ,
+      password: this.user.password
     });  
   }  
 
@@ -99,6 +101,6 @@ export class UserinfoComponent implements OnInit, OnDestroy {
   
   onSaveComplete(): void {  
     this.userForm.reset();  
-    this.router.navigate(['/login']);  
+    this.router.navigate(['/']);  
   }  
 }
